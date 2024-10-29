@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  weather_api:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - ./weather_cache:/app/weather_cache
+    environment:
+      - WEATHER_API_URL=https://api.openweathermap.org/data/2.5/weather
+      - API_KEY=8d0e8fed42d76ca1409dccedc472c1e8
