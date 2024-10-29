@@ -1,0 +1,50 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# FastAPI specific
+*.db
+*.sqlite3
+*.log
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~ 
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Docker
+docker-compose.override.yml
+Dockerfile
+docker-compose.yml
+
+# Secrets and configuration files
+*.env
+*.json
+*.yml
+*.yaml
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
