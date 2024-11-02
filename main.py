@@ -12,7 +12,7 @@ app = FastAPI()
 WEATHER_API_URL = "https://api.openweathermap.org/data/2.5/weather"
 API_KEY = "8d0e8fed42d76ca1409dccedc472c1e8"
 CACHE_DIR = "weather_cache"
-CACHE_EXPIRY = timedelta(minutes=5)
+CACHE_EXPIRY = timedelta(seconds=1)
 
 
 os.makedirs(CACHE_DIR, exist_ok=True)
@@ -56,7 +56,7 @@ async def get_weather(city: str):
         with open(cache_file, 'w') as f:
             json.dump(weather_data, f)
 
-        return WeatherResponse(city=city, timestamp=str(datetime.utcnow()), data=weather_data)
+        return WeatherResponse(city=city, timestamp=str(datetime.now()), data=weather_data)
 
     except aiohttp.ClientResponseError as e:
         raise HTTPException(status_code=e.status, detail=str(e))
