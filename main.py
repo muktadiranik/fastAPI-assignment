@@ -12,7 +12,7 @@ app = FastAPI()
 WEATHER_API_URL = "https://api.openweathermap.org/data/2.5/weather"
 API_KEY = "8d0e8fed42d76ca1409dccedc472c1e8"
 CACHE_DIR = "weather_cache"
-CACHE_EXPIRY = timedelta(seconds=1)
+CACHE_EXPIRY = timedelta(seconds=5)
 
 
 os.makedirs(CACHE_DIR, exist_ok=True)
